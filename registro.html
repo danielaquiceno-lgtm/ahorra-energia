@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar un equipo</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+    <!-- header: el ENCABEZADO de la pagina -->
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Registrar un equipo</h1>
+        <p>Escriba los datos de un equipo de su casa.</p>
+        <!-- nav: el MENU de navegacion -->
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link active bg-white text-primary fw-bold" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi Factura</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- section: una SECCION tematica, con su propio titulo -->
+        <section>
+            <h2>Formulario de registro</h2>
+
+            <!-- Componente extra de Bootstrap: ALERT -->
+            <div class="alert alert-secondary mb-4" role="alert">
+                <strong>Instrucciones:</strong> Complete los campos obligatorios para registrar el equipo.
+            </div>
+
+            <form action="registro.html" method="get">
+
+                <!-- Componente extra de Bootstrap: CARD envolviendo el fieldset -->
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <fieldset>
+                            <legend class="float-none w-auto px-2 fs-5 text-primary fw-bold">Datos del equipo</legend>
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre del equipo:</label>
+                                <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="Ej.: Computador PC, Nevera Mabe">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="potencia" class="form-label">Potencia (W):</label>
+                                <input class="form-control" type="number" id="potencia" name="potencia" min="1" max="10000" required placeholder="Ej.: 350">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="horas" class="form-label">Horas de uso al día:</label>
+                                <input class="form-control" type="number" id="horas" name="horas" min="0" max="24" step="0.1" required placeholder="Ej.: 5">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tipo" class="form-label">Tipo de equipo:</label>
+                                <select class="form-select" id="tipo" name="tipo">
+                                    <option value="electronico">Electrónico (computador, televisor)</option>
+                                    <option value="frio">Produce frío (nevera, aire acondicionado)</option>
+                                    <option value="motor">Tiene motor (licuadora, lavadora)</option>
+                                    <option value="calor">Produce calor (ducha, plancha, estufa)</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <fieldset>
+                            <legend class="float-none w-auto px-2 fs-5 text-primary fw-bold">Uso y Hábitos</legend>
+                            <p class="mb-2 fw-bold">¿Cuándo lo usa más?</p>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="dia" name="momento" value="dia" checked>
+                                <label class="form-check-label" for="dia">De día</label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" id="noche" name="momento" value="noche">
+                                <label class="form-check-label" for="noche">De noche (6 a 9 pm, la hora pico)</label>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="desconecta" name="desconecta" value="si">
+                                <label class="form-check-label" for="desconecta">Lo desconecto cuando no lo uso</label>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label">Fecha del registro:</label>
+                                <input class="form-control" type="date" id="fecha" name="fecha">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="notas" class="form-label">Observaciones:</label>
+                                <textarea class="form-control" id="notas" name="notas" rows="3" placeholder="Ej.: dato tomado de la etiqueta o del manual"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2 mb-4">
+                    <button class="btn btn-primary" type="submit">Registrar equipo</button>
+                    <button class="btn btn-secondary" type="reset">Borrar formulario</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- footer: pie de pagina -->
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>
